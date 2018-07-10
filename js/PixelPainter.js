@@ -5,7 +5,7 @@ const numColumns = 8;
 
 let colorDiv = document.createElement('div');
 colorDiv.className = "mainColorDiv";
-document.body.appendChild(colorDiv);
+pixelPainter.appendChild(colorDiv);
 
 // create grid for palette.
 for (let i=0; i<numRows; i++){
@@ -39,7 +39,7 @@ for (let i=0; i<colorPalette.length; i++){
 
 var colorChoice = document.createElement('div');
 colorChoice.className = "daColor";
-colorChoice.style.backgroundColor = null;
+colorChoice.style.backgroundColor = "white";
 document.body.appendChild(colorChoice);
 
 function showHighlight(){
@@ -52,11 +52,17 @@ function showHighlight(){
 const canvasNumRows = 10;
 const canvasNumColumns = 10; 
 
+let canvasText = document.createElement('div');
+canvasText.id = "textCanvas";
+document.body.appendChild(canvasText);
+canvasText.innerHTML = "The Paint Color"
+
 let canvasDiv = document.createElement('div');
 canvasDiv.className = "mainCanvasDiv";
 document.body.appendChild(canvasDiv);
 
-// create grid for palette.
+
+// ***** create grid for canvas.*****
 for (let i=0; i<numRows; i++){
     let createCanvasRow = document.createElement('div');
     createCanvasRow.className = 'canvasRows'
@@ -65,18 +71,19 @@ for (let i=0; i<numRows; i++){
     for (let j=1; j <= canvasNumColumns; j++){
         let blankCanvasDiv = document.createElement('div');
         blankCanvasDiv.className = 'canvasColumns';
+        // blankCanvasDiv.id = 'daCanvasDivs';
         blankCanvasDiv.id = createCanvasRow.id+'p' + j;
+        blankCanvasDiv.style.backgroundColor = "white"
         createCanvasRow.appendChild(blankCanvasDiv);
         // console.log(blankCanvasDiv.id)
     }
-    
 }
 
+// ***** be able to paint the canvas *****
 const colorMe = document.getElementsByClassName('canvasColumns');
 
 for (let i=0; i < colorMe.length; i++){
     colorMe[i].addEventListener('click', colorTheCanvas);
-
 }
 
 function colorTheCanvas(){
@@ -84,7 +91,20 @@ function colorTheCanvas(){
     this.style.backgroundColor = colorChoice.style.backgroundColor;
 }
 
+// ***** erase button *****
+let eraseButton = document.createElement('div');
+eraseButton.className = 'clearCanvas';
+eraseButton.innerHTML = "Erase";
+document.body.appendChild(eraseButton);
+eraseButton.addEventListener('click', eraseCanvas);
 
+function eraseCanvas(){
+    colorChoice.style.backgroundColor = "white"
 
+    for (let i=0; i < colorMe.length; i++){
+        colorMe[i].style.backgroundColor = "white";
+    }
+    
+}
 
 
