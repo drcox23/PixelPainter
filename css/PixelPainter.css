@@ -18,6 +18,10 @@ body {
 .mainCanvasDiv {
     display: flex;
     flex-flow: row;
+    position: absolute;
+    top: 70px;
+    left: 300px;
+
 }
 
 .canvasColumns {
@@ -25,4 +29,10 @@ body {
     width: 30px;
     height: 30px;
     padding: 10px;
+}
+
+.daColor {
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
 }
