@@ -1,7 +1,12 @@
 body {
-    background-color: aquamarine;
+    background-color: cadetblue;
 }
 
+.pixelPainter {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
 
 .paletteRows {
     display: flex;
@@ -32,9 +37,35 @@ body {
 }
 
 .daColor {
-    width: 100px;
+    margin: 10px;
+    /* padding: 20p x; */
+    max-width: 150px;
     height: 20px;
     border: 1px solid black;
     background-color: white;
 }
 
+.clearCanvas {
+    margin: 10px;
+    padding: 5px;
+    max-width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: antiquewhite;
+    background-color: lightslategray;
+}
+
+#textCanvas {
+    margin: 30px 10px 2px 30px;
+    /* padding: 5px; */
+    max-width: 150px;
+    height: 20px;
+    color: blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: inline-block;
+
+}
