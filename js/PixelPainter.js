@@ -50,6 +50,7 @@ document.body.appendChild(colorChoice);
 
 function showHighlight(){
     console.log(this.id);
+    this.style.border = "1px solid yellow";
     colorChoice.style.backgroundColor = this.style.backgroundColor;
    
 }
@@ -96,7 +97,7 @@ function colorTheCanvas(){
 // ***** erase button *****
 let eraseButton = document.createElement('div');
 eraseButton.className = 'clearCanvas';
-eraseButton.innerHTML = "Erase";
+eraseButton.innerHTML = "CLEAR";
 document.body.appendChild(eraseButton);
 eraseButton.addEventListener('click', eraseCanvas);
 
@@ -106,7 +107,6 @@ function eraseCanvas(){
     for (let i=0; i < colorMe.length; i++){
         colorMe[i].style.backgroundColor = "white";
     }
-    
-}
+};
 
 
