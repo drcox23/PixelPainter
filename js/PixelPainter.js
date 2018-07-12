@@ -35,6 +35,7 @@ const colorPalette = document.getElementsByClassName('paletteColors');
 for (let i=0; i<colorPalette.length; i++){
     colorPalette[i].style.backgroundColor = allTheColors[i];
     colorPalette[i].addEventListener('click', showHighlight);
+    
 };
 
 // show the paint color chosen
@@ -50,14 +51,18 @@ document.body.appendChild(colorChoice);
 
 function showHighlight(){
     console.log(this.id);
+    // // colorChoice[i].style.border = "1px solid yellow";
+    // if (colorChoice.style.border = "1px solid yellow"){
+    //     colorChoice.style.border = "";
+    // };
     this.style.border = "1px solid yellow";
     colorChoice.style.backgroundColor = this.style.backgroundColor;
    
 }
 
 // creating the grid to paint on
-const canvasNumRows = 10;
-const canvasNumColumns = 10; 
+const canvasNumRows = 11;
+const canvasNumColumns = 11; 
 
 let canvasDiv = document.createElement('div');
 canvasDiv.className = "mainCanvasDiv";
@@ -95,13 +100,13 @@ function colorTheCanvas(){
 }
 
 // ***** erase button *****
-let eraseButton = document.createElement('div');
-eraseButton.className = 'clearCanvas';
-eraseButton.innerHTML = "CLEAR";
-document.body.appendChild(eraseButton);
-eraseButton.addEventListener('click', eraseCanvas);
+let clearButton = document.createElement('div');
+clearButton.className = 'clearCanvas';
+clearButton.innerHTML = "CLEAR";
+document.body.appendChild(clearButton);
+clearButton.addEventListener('click', clearCanvas);
 
-function eraseCanvas(){
+function clearCanvas(){
     colorChoice.style.backgroundColor = "white"
 
     for (let i=0; i < colorMe.length; i++){
@@ -109,4 +114,15 @@ function eraseCanvas(){
     }
 };
 
+// ***** erase button *****
+let eraseButton = document.createElement('div');
+eraseButton.className = 'eraseButt';
+eraseButton.innerHTML = "ERASE";
+document.body.appendChild(eraseButton);
+eraseButton.addEventListener('click', eraseCanvas);
+
+function eraseCanvas(){
+    colorChoice.style.backgroundColor = "white"
+
+};
 
