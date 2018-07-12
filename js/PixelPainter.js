@@ -13,10 +13,11 @@ for (let i=0; i<numRows; i++){
     createRow.className = 'paletteRows'
     createRow.id = 'r'+i;
     colorDiv.appendChild(createRow);
-    for (let j=1; j <= numColumns; j++){
+    for (let j=0; j < numColumns; j++){
         let paletteDiv = document.createElement('div');
         paletteDiv.className = 'paletteColors';
         paletteDiv.id = createRow.id+'p' + j;
+        // paletteDiv.addEventListener('click', showHighlight);
         createRow.appendChild(paletteDiv);
         // console.log(paletteDiv.id)
     }
@@ -31,6 +32,7 @@ const allTheColors = ["#CD5C5C", "#F08080", "#FA8072", "#E9967A", "#FFA07A", "#D
 
 // ***** set palette colors *****
 const colorPalette = document.getElementsByClassName('paletteColors');
+colorPalette[0].style.border = "1px solid yellow";
 // console.log(colorPalette.length)
 for (let i=0; i<colorPalette.length; i++){
     colorPalette[i].style.backgroundColor = allTheColors[i];
@@ -42,19 +44,20 @@ for (let i=0; i<colorPalette.length; i++){
 let canvasText = document.createElement('div');
 canvasText.id = "textCanvas";
 colorDiv.appendChild(canvasText);
-canvasText.innerHTML = "The Paint Color"
+canvasText.innerHTML = "Your Color Choice"
 
 var colorChoice = document.createElement('div');
 colorChoice.className = "daColor";
-colorChoice.style.backgroundColor = "white";
+colorChoice.style.backgroundColor = colorPalette[0].style.backgroundColor;
 document.body.appendChild(colorChoice);
 
 function showHighlight(){
-    console.log(this.id);
-    // // colorChoice[i].style.border = "1px solid yellow";
-    // if (colorChoice.style.border = "1px solid yellow"){
-    //     colorChoice.style.border = "";
-    // };
+    // console.log(this.id);
+    for (var i=0; i<colorPalette.length; i++){
+        if (colorPalette[i].style.border === "1px solid yellow"){
+            colorPalette[i].style.border = "1px solid black";
+        }
+    }
     this.style.border = "1px solid yellow";
     colorChoice.style.backgroundColor = this.style.backgroundColor;
    
