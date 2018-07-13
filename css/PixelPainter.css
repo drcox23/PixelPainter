@@ -3,16 +3,17 @@ body {
 }
 
 .pixelPainter {
-    display: flex;
-    flex-flow: column wrap;
+    display: flex row;
+    /* flex-flow: row; */
     margin: auto;
-    justify-content: center;
+
 }
 
 .mainColorDiv {
     display: flex;
     flex-flow: row wrap;
-    margin: auto;
+    float: left;
+    /* margin: auto; */
     max-width: 250px;
     /* border: 1px solid black; */
     justify-content: space-around;
@@ -33,10 +34,11 @@ body {
 .mainCanvasDiv {
     display: flex;
     flex-flow: row;
+    /* flex-grow: 1000; */
     margin: auto;
     /* border: 1px solid black; */
     max-width: 700px;
-    /* justify-content: ; */
+    justify-content: center;
     /* position: absolute;
     top: 70px;
     left: 300px; */
@@ -47,7 +49,7 @@ body {
     border: 1px solid black;
     width: 25px;
     height: 25px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .daColor {
