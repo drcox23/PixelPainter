@@ -4,8 +4,18 @@ body {
 
 .pixelPainter {
     display: flex;
-    flex-flow: column;
+    flex-flow: column wrap;
+    margin: auto;
     justify-content: center;
+}
+
+.mainColorDiv {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+    max-width: 250px;
+    /* border: 1px solid black; */
+    justify-content: space-around;
 }
 
 .paletteRows {
@@ -23,10 +33,13 @@ body {
 .mainCanvasDiv {
     display: flex;
     flex-flow: row;
+    margin: auto;
+    /* border: 1px solid black; */
+    max-width: 700px;
     /* justify-content: ; */
-    position: absolute;
+    /* position: absolute;
     top: 70px;
-    left: 300px;
+    left: 300px; */
 
 }
 
@@ -40,7 +53,8 @@ body {
 .daColor {
     margin: 10px;
     /* padding: 20p x; */
-    max-width: 150px;
+    min-width: 150px;
+    max-width: 200px;
     height: 20px;
     border: 1px solid black;
     background-color: white;
@@ -49,6 +63,7 @@ body {
 .clearCanvas {
     margin: 10px;
     padding: 5px;
+    min-width: 100px;
     max-width: 150px;
     height: 50px;
     border-radius: 15px;
@@ -63,6 +78,7 @@ body {
 .eraseButt {
     margin: 10px;
     padding: 5px;
+    min-width: 100px;
     max-width: 150px;
     height: 50px;
     border-radius: 15px;
@@ -76,11 +92,13 @@ body {
 
 
 #textCanvas {
-    margin: 30px 10px 2px 30px;
+    margin: 10px;
     /* padding: 5px; */
     max-width: 150px;
     height: 20px;
-    color: blue;
+    line-height: 20px;
+    font-size: 100%;
+    color: antiquewhite;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: inline-block;
 

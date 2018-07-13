@@ -49,7 +49,7 @@ canvasText.innerHTML = "Your Color Choice"
 var colorChoice = document.createElement('div');
 colorChoice.className = "daColor";
 colorChoice.style.backgroundColor = colorPalette[0].style.backgroundColor;
-document.body.appendChild(colorChoice);
+colorDiv.appendChild(colorChoice);
 
 function showHighlight(){
     // console.log(this.id);
@@ -69,7 +69,7 @@ const canvasNumColumns = 11;
 
 let canvasDiv = document.createElement('div');
 canvasDiv.className = "mainCanvasDiv";
-document.body.appendChild(canvasDiv);
+pixelPainter.appendChild(canvasDiv);
 
 
 // ***** create grid for canvas.*****
@@ -95,7 +95,7 @@ const colorMe = document.getElementsByClassName('canvasColumns');
 for (let i=0; i < colorMe.length; i++){
     colorMe[i].addEventListener('click', colorTheCanvas);
     // colorMe[i].addEventListener('mousedown', colorTheCanvas);
-}
+};
 
 function colorTheCanvas(){
     console.log(this.id);
@@ -106,7 +106,7 @@ function colorTheCanvas(){
 let clearButton = document.createElement('div');
 clearButton.className = 'clearCanvas';
 clearButton.innerHTML = "CLEAR";
-document.body.appendChild(clearButton);
+colorDiv.appendChild(clearButton);
 clearButton.addEventListener('click', clearCanvas);
 
 function clearCanvas(){
@@ -121,7 +121,7 @@ function clearCanvas(){
 let eraseButton = document.createElement('div');
 eraseButton.className = 'eraseButt';
 eraseButton.innerHTML = "ERASE";
-document.body.appendChild(eraseButton);
+colorDiv.appendChild(eraseButton);
 eraseButton.addEventListener('click', eraseCanvas);
 
 function eraseCanvas(){
