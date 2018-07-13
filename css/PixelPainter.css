@@ -2,9 +2,9 @@ body {
     background-color: cadetblue;
 }
 
-.pixelPainter {
-    display: flex row;
-    /* flex-flow: row; */
+#pixelPainter {
+    display: flex;
+    flex-flow: row wrap;
     margin: auto;
 
 }
@@ -12,10 +12,8 @@ body {
 .mainColorDiv {
     display: flex;
     flex-flow: row wrap;
-    float: left;
-    /* margin: auto; */
+    margin: auto;
     max-width: 250px;
-    /* border: 1px solid black; */
     justify-content: space-around;
 }
 
@@ -34,14 +32,9 @@ body {
 .mainCanvasDiv {
     display: flex;
     flex-flow: row;
-    /* flex-grow: 1000; */
     margin: auto;
-    /* border: 1px solid black; */
     max-width: 700px;
     justify-content: center;
-    /* position: absolute;
-    top: 70px;
-    left: 300px; */
 
 }
 
@@ -54,7 +47,6 @@ body {
 
 .daColor {
     margin: 10px;
-    /* padding: 20p x; */
     min-width: 150px;
     max-width: 200px;
     height: 20px;
@@ -95,7 +87,6 @@ body {
 
 #textCanvas {
     margin: 10px;
-    /* padding: 5px; */
     max-width: 150px;
     height: 20px;
     line-height: 20px;

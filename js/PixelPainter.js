@@ -46,14 +46,14 @@ canvasText.id = "textCanvas";
 colorDiv.appendChild(canvasText);
 canvasText.innerHTML = "Your Color Choice"
 
-var colorChoice = document.createElement('div');
+let colorChoice = document.createElement('div');
 colorChoice.className = "daColor";
 colorChoice.style.backgroundColor = colorPalette[0].style.backgroundColor;
 colorDiv.appendChild(colorChoice);
 
 function showHighlight(){
     // console.log(this.id);
-    for (var i=0; i<colorPalette.length; i++){
+    for (let i=0; i<colorPalette.length; i++){
         if (colorPalette[i].style.border === "1px solid yellow"){
             colorPalette[i].style.border = "1px solid black";
         }
